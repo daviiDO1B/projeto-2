@@ -1,112 +1,222 @@
-body {
-    color: white;
-    background: #2D3E3C;
+/* ==========================================================================
+   Variáveis de Cores (Suporte para Tema Claro/Escuro)
+   ========================================================================== */
+:root {
+    --bg-primary: #f4f7f5;
+    --bg-card: #ffffff;
+    --text-main: #2c3e50;
+    --color-accent: #27ae60;
+    --color-accent-hover: #219653;
+    --color-danger: #e74c3c;
+    --border-color: #dcdde1;
+    --transition-smooth: all 0.3s ease;
+}
+
+[data-theme="dark"] {
+    --bg-primary: #1a252f;
+    --bg-card: #2c3e50;
+    --text-main: #f4f7f5;
+    --color-accent: #2ecc71;
+    --border-color: #34495e;
+}
+
+/* ==========================================================================
+   Resets e Estilos Gerais
+   ========================================================================== */
+* {
     margin: 0;
-    font-family: "Roboto", sans-serif;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-header {
-    border-bottom: solid 2px #A1D3A1;
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    transition: var(--transition-smooth);
+    line-height: 1.6;
+}
+
+.hidden {
+    display: none !important;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background: var(--border-color);
+    margin: 40px 0;
+}
+
+/* ==========================================================================
+   Layout (Header, Main, Footer)
+   ========================================================================== */
+.main-header {
+    background-color: var(--bg-card);
     padding: 20px;
-    font-size: 36px;
-    color: #A1D3A1;
-    font-family: "Chakra Petch", sans-serif;
-    text-align: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
 }
 
-nav {
-    background: #4C6B6B;
-    padding: 10px;
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
     display: flex;
-    justify-content: center;
-}
-
-nav a {
-    color: #A1D3A1;
-    text-decoration: none;
-    padding: 10px 20px;
-    margin: 0 10px;
-    font-weight: bold;
-    border-radius: 5px;
-}
-
-nav a:hover {
-    background-color: #68A0B9;
-}
-
-.logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 36px;
-    font-family: "Chakra Petch", sans-serif;
-    color: #A1D3A1;
-    background-color: #4C6B6B;
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-}
-
-.logo span {
-    color: #68A0B9;
-    font-weight: bold;
-}
-
-.chamada {
-    background: #68A0B9;
-    padding-bottom: 80px;
-    padding-top: 80px;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
 }
 
-.chamada-texto {
-    margin-right: 5%;
+.main-header h1 span {
+    font-size: 0.8rem;
+    background: var(--color-accent);
     color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    vertical-align: middle;
+}
+
+.main-content {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.main-footer {
     text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.9rem;
 }
 
-h1 {
-    font-size: 48px;
-    margin-bottom: 10px;
+/* ==========================================================================
+   Componentes e UI
+   ========================================================================== */
+.user-form {
+    margin-top: 20px;
+    background: var(--bg-card);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
 }
 
-p {
-    font-size: 20px;
-    max-width: 600px;
+.form-group {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    background: var(--bg-primary);
+    color: var(--text-main);
+}
+
+button {
+    cursor: pointer;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: var(--transition-smooth);
+}
+
+.btn-primary {
+    background-color: var(--color-accent);
     color: white;
 }
 
-.categoria-videos {
+.btn-primary:hover {
+    background-color: var(--color-accent-hover);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    border: 2px solid var(--color-accent);
+    color: var(--color-accent);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-accent);
+    color: white;
+}
+
+.btn-action {
+    background-color: var(--text-main);
+    color: var(--bg-card);
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* Flexbox para os Cards do Simulador */
+.cards-container {
     display: flex;
-    overflow-x: auto;
     gap: 20px;
-    padding: 20px;
-    background-color: #4C6B6B;
+    margin: 24px 0;
 }
 
-.categoria {
-    padding: 20px;
-    margin-top: 50px;
+.card {
+    flex: 1;
+    background: var(--bg-card);
+    padding: 24px;
+    border-radius: 8px;
+    border: 2px solid transparent;
+    transition: var(--transition-smooth);
 }
 
-.categoria-videos img {
-    opacity: 0.7;
-    height: 200px;
-    transition: opacity 0.3s ease;
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
 }
 
-.categoria-videos img:hover {
-    opacity: 1.0;
-    border: 3px solid #A1D3A1;
+.card-eco { border-top: 6px solid var(--color-accent); }
+.card-chemical { border-top: 6px solid var(--color-danger); }
+
+/* Painel de Resultados */
+.result-box {
+    background: var(--bg-card);
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 30px;
+    border-left: 6px solid var(--color-accent);
 }
 
-.categoria h2 {
-    color: #A1D3A1;
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+.stat-item {
+    background: var(--bg-primary);
+    padding: 15px;
+    border-radius: 6px;
     text-align: center;
-    margin-bottom: 20px;
+}
+
+/* ==========================================================================
+   Media Queries (Acessibilidade e Responsividade)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .form-group {
+        flex-direction: column;
+    }
+
+    .cards-container {
+        flex-direction: column;
+    }
+
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
 }
