@@ -1,39 +1,42 @@
 /* ==========================================================================
-   Variáveis de Cores (Suporte para Tema Claro/Escuro)
+   Variáveis de Cores Dinâmicas (CSS Custom Properties)
    ========================================================================== */
 :root {
-    --bg-primary: #f4f7f5;
+    --bg-primary: #f5f7f6;
     --bg-card: #ffffff;
     --text-main: #2c3e50;
+    --text-muted: #57606f;
     --color-accent: #27ae60;
-    --color-accent-hover: #219653;
-    --color-danger: #e74c3c;
-    --border-color: #dcdde1;
-    --transition-smooth: all 0.3s ease;
+    --color-accent-hover: #1e7e43;
+    --color-danger: #d63031;
+    --color-danger-hover: #b32424;
+    --border-color: #e2e8f0;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 [data-theme="dark"] {
-    --bg-primary: #1a252f;
-    --bg-card: #2c3e50;
-    --text-main: #f4f7f5;
-    --color-accent: #2ecc71;
-    --border-color: #34495e;
+    --bg-primary: #12181f;
+    --bg-card: #1e2732;
+    --text-main: #f5f7f6;
+    --text-muted: #a4b0be;
+    --border-color: #2d3748;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 /* ==========================================================================
-   Resets e Estilos Gerais
+   Estilos Base e Reset
    ========================================================================== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
 }
 
 body {
     background-color: var(--bg-primary);
     color: var(--text-main);
-    transition: var(--transition-smooth);
+    transition: background-color 0.3s ease, color 0.3s ease;
     line-height: 1.6;
 }
 
@@ -41,181 +44,242 @@ body {
     display: none !important;
 }
 
-hr {
-    border: 0;
-    height: 1px;
-    background: var(--border-color);
-    margin: 40px 0;
-}
-
 /* ==========================================================================
-   Layout (Header, Main, Footer)
+   Estrutura de Layout
    ========================================================================== */
 .main-header {
     background-color: var(--bg-card);
     padding: 20px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
 }
 
 .header-container {
-    max-width: 1200px;
+    max-width: 1100px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.main-header h1 span {
+.hashtag {
     font-size: 0.8rem;
     background: var(--color-accent);
-    color: white;
-    padding: 4px 8px;
-    border-radius: 4px;
-    vertical-align: middle;
+    color: #fff;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    margin-left: 8px;
 }
 
 .main-content {
-    max-width: 1000px;
+    max-width: 900px;
     margin: 40px auto;
     padding: 0 20px;
-}
-
-.main-footer {
-    text-align: center;
-    padding: 20px;
-    margin-top: 60px;
-    border-top: 1px solid var(--border-color);
-    font-size: 0.9rem;
+    min-height: 70vh;
 }
 
 /* ==========================================================================
-   Componentes e UI
+   Componentes de Formulário e UI
    ========================================================================== */
-.user-form {
-    margin-top: 20px;
+.subtitle {
+    color: var(--text-muted);
+    margin-bottom: 25px;
+    font-size: 1.1rem;
+}
+
+.card-form {
     background: var(--bg-card);
-    padding: 20px;
-    border-radius: 8px;
+    padding: 30px;
+    border-radius: 12px;
     border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+}
+
+.card-form label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: 600;
 }
 
 .form-group {
     display: flex;
-    gap: 10px;
-    margin-top: 10px;
+    gap: 12px;
 }
 
 input[type="text"] {
     flex: 1;
-    padding: 12px;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
+    padding: 14px;
+    border: 2px solid var(--border-color);
+    border-radius: 8px;
     background: var(--bg-primary);
     color: var(--text-main);
+    font-size: 1rem;
+    transition: border-color 0.3s;
 }
 
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--color-accent);
+}
+
+/* Botões */
 button {
-    cursor: pointer;
-    padding: 12px 24px;
-    border: none;
-    border-radius: 6px;
+    font-size: 1rem;
     font-weight: bold;
-    transition: var(--transition-smooth);
+    padding: 14px 28px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
 }
 
 .btn-primary {
     background-color: var(--color-accent);
-    color: white;
+    color: #fff;
 }
 
 .btn-primary:hover {
     background-color: var(--color-accent-hover);
+    transform: translateY(-1px);
 }
 
 .btn-secondary {
-    background-color: transparent;
+    background: transparent;
     border: 2px solid var(--color-accent);
     color: var(--color-accent);
+    padding: 8px 18px;
 }
 
 .btn-secondary:hover {
-    background-color: var(--color-accent);
-    color: white;
+    background: var(--color-accent);
+    color: #fff;
 }
 
-.btn-action {
-    background-color: var(--text-main);
-    color: var(--bg-card);
-    width: 100%;
-    margin-top: 15px;
-}
-
-/* Flexbox para os Cards do Simulador */
+/* Cards do Simulador */
 .cards-container {
     display: flex;
-    gap: 20px;
-    margin: 24px 0;
+    gap: 25px;
+    margin: 30px 0;
 }
 
 .card {
     flex: 1;
     background: var(--bg-card);
-    padding: 24px;
-    border-radius: 8px;
-    border: 2px solid transparent;
-    transition: var(--transition-smooth);
+    padding: 30px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
 }
 
 .card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
-.card-eco { border-top: 6px solid var(--color-accent); }
-.card-chemical { border-top: 6px solid var(--color-danger); }
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+}
 
-/* Painel de Resultados */
+.card h4 {
+    margin-bottom: 12px;
+    font-size: 1.3rem;
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+    min-height: 70px;
+}
+
+.btn-action {
+    width: 100%;
+    color: white;
+}
+
+.btn-eco-action { background-color: var(--color-accent); }
+.btn-eco-action:hover { background-color: var(--color-accent-hover); }
+
+.btn-chem-action { background-color: var(--color-danger); }
+.btn-chem-action:hover { background-color: var(--color-danger-hover); }
+
+/* Caixa de Resultados */
 .result-box {
     background: var(--bg-card);
-    padding: 30px;
-    border-radius: 8px;
-    margin-top: 30px;
-    border-left: 6px solid var(--color-accent);
+    padding: 35px;
+    border-radius: 12px;
+    border-left: 8px solid var(--color-accent);
+    box-shadow: var(--shadow);
+    margin-top: 40px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+#result-title {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
 }
 
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    margin-top: 20px;
-    font-weight: bold;
+    gap: 20px;
+    margin-top: 25px;
 }
 
 .stat-item {
     background: var(--bg-primary);
-    padding: 15px;
-    border-radius: 6px;
+    padding: 20px;
+    border-radius: 8px;
     text-align: center;
+    border: 1px solid var(--border-color);
+}
+
+.stat-label {
+    display: block;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.stat-value {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.main-footer {
+    text-align: center;
+    padding: 30px;
+    border-top: 1px solid var(--border-color);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-top: 60px;
 }
 
 /* ==========================================================================
-   Media Queries (Acessibilidade e Responsividade)
+   Responsividade (Media Queries)
    ========================================================================== */
 @media (max-width: 768px) {
     .header-container {
         flex-direction: column;
         gap: 15px;
-        text-align: center;
     }
-
     .form-group {
         flex-direction: column;
     }
-
     .cards-container {
         flex-direction: column;
     }
-
     .stats-grid {
         grid-template-columns: 1fr;
     }

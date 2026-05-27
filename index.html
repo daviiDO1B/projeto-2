@@ -10,44 +10,47 @@
 
     <header class="main-header">
         <div class="header-container">
-            <h1>EcoPraga <span>#agrinho2026</span></h1>
+            <h1>EcoPraga <span class="hashtag">#agrinho2026</span></h1>
             <button id="btn-theme" class="btn-secondary" aria-label="Alternar modo visual">Modo Escuro</button>
         </div>
     </header>
 
     <main class="main-content">
         
-        <section class="intro-section">
+        <section id="intro-section" class="intro-section">
             <h2>Agro Forte, Futuro Sustentável</h2>
-            <p>O equilíbrio entre produzir alimentos e proteger a biodiversidade começa com escolhas inteligentes. Teste nosso simulador de manejo biológico abaixo.</p>
+            <p class="subtitle">O equilíbrio entre produzir com alta eficiência e proteger a nossa biodiversidade.</p>
             
-            <form id="form-user" class="user-form">
-                <label for="user-name">Produtor(a), digite seu nome:</label>
-                <div class="form-group">
-                    <input type="text" id="user-name" placeholder="Ex: Maria Silva" required>
-                    <button type="submit" class="btn-primary">Iniciar Diagnóstico</button>
-                </div>
-            </form>
-            <div id="welcome-message" class="hidden"></div>
+            <div class="card-form">
+                <form id="form-user">
+                    <label for="user-name">Olá! Para começar o diagnóstico, digite seu nome ou de sua propriedade:</label>
+                    <div class="form-group">
+                        <input type="text" id="user-name" placeholder="Ex: Fazenda Santa Maria" required>
+                        <button type="submit" class="btn-primary">Acessar Simulador</button>
+                    </div>
+                </form>
+            </div>
         </section>
 
-        <hr>
-
-        <section id="simulator" class="simulator-section hidden">
+        <section id="simulator-section" class="simulator-section hidden">
+            <div id="welcome-message"></div>
+            
             <h3>Simulador de Manejo Integrado de Pragas (MIP)</h3>
-            <p>Sua lavoura está enfrentando uma infestação de lagartas. Escolha a sua estratégia de controle:</p>
+            <p>Sua lavoura está registrando um aumento inicial na população de lagartas-do-cartucho. Qual estratégia de manejo você vai adotar?</p>
 
             <div class="cards-container">
                 <div class="card card-eco">
-                    <h4>Controle Biológico</h4>
-                    <p>Inserção de vespas inimigas naturais (<em>Trichogramma</em>) e aplicação de bioinseticidas.</p>
-                    <button class="btn-action" onclick="simularManejo('biologico')">Escolher Biológico</button>
+                    <div class="card-icon">🌱</div>
+                    <h4>Manejo Biológico e Cultural</h4>
+                    <p>Liberação do parasitoide <em>Trichogramma pretiosum</em> (vespinha) e aplicação de defensivos biológicos à base de <em>Bacillus thuringiensis</em> (Bt).</p>
+                    <button type="button" class="btn-action btn-eco-action" onclick="simularManejo('biologico')">Aplicar Controle Biológico</button>
                 </div>
 
                 <div class="card card-chemical">
+                    <div class="card-icon">⚠️</div>
                     <h4>Químico Calendarizado</h4>
-                    <p>Aplicação massiva de defensivos químicos sintéticos de amplo espectro em todas as semanas.</p>
-                    <button class="btn-action" onclick="simularManejo('quimico')">Escolher Químico</button>
+                    <p>Pulverização massiva com inseticidas químicos sintéticos de largo espectro preventivamente a cada 7 dias, independente da amostragem.</p>
+                    <button type="button" class="btn-action btn-chem-action" onclick="simularManejo('quimico')">Aplicar Químico Massivo</button>
                 </div>
             </div>
 
@@ -55,9 +58,18 @@
                 <h4 id="result-title"></h4>
                 <p id="result-desc"></p>
                 <div class="stats-grid">
-                    <div class="stat-item">Produtividade: <span id="stat-prod">-</span></div>
-                    <div class="stat-item">Biodiversidade: <span id="stat-bio">-</span></div>
-                    <div class="stat-item">Custo a Longo Prazo: <span id="stat-custo">-</span></div>
+                    <div class="stat-item">
+                        <span class="stat-label">Produtividade</span>
+                        <span id="stat-prod" class="stat-value">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Biodiversidade</span>
+                        <span id="stat-bio" class="stat-value">-</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-label">Custo Econômico</span>
+                        <span id="stat-custo" class="stat-value">-</span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -65,7 +77,7 @@
     </main>
 
     <footer class="main-footer">
-        <p>&copy; 2026 - Desenvolvido para o Concurso Agrinho. Orgulho em ser Agro Sustentável.</p>
+        <p>&copy; 2026 - Projeto Desenvolvido para o Concurso Agrinho. Foco em Inovação e Sustentabilidade no Campo.</p>
     </footer>
 
     <script src="script.js"></script>
