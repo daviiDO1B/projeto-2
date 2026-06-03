@@ -1,85 +1,61 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EcoPraga - Agrinho 2026</title>
-    <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EcoPragas - Agrinho 2026</title>
+<link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body id="body">
 
-    <header class="main-header">
-        <div class="header-container">
-            <h1>EcoPraga <span class="hashtag">#agrinho2026</span></h1>
-            <button id="btn-theme" class="btn-secondary" aria-label="Alternar modo visual">Modo Escuro</button>
-        </div>
-    </header>
+<header>
+    <h1>🌱 EcoPragas</h1>
+    <p>Agro forte, futuro sustentável: equilíbrio entre produção e meio ambiente</p>
 
-    <main class="main-content">
-        
-        <section id="intro-section" class="intro-section">
-            <h2>Agro Forte, Futuro Sustentável</h2>
-            <p class="subtitle">O equilíbrio entre produzir com alta eficiência e proteger a nossa biodiversidade.</p>
-            
-            <div class="card-form">
-                <form id="form-user">
-                    <label for="user-name">Olá! Para começar o diagnóstico, digite seu nome ou de sua propriedade:</label>
-                    <div class="form-group">
-                        <input type="text" id="user-name" placeholder="Ex: Fazenda Santa Maria" required>
-                        <button type="submit" class="btn-primary">Acessar Simulador</button>
-                    </div>
-                </form>
-            </div>
-        </section>
+    <button id="modoBtn">
+        🌙 Ativar Modo Escuro
+    </button>
+</header>
 
-        <section id="simulator-section" class="simulator-section hidden">
-            <div id="welcome-message"></div>
-            
-            <h3>Simulador de Manejo Integrado de Pragas (MIP)</h3>
-            <p>Sua lavoura está registrando um aumento inicial na população de lagartas-do-cartucho. Qual estratégia de manejo você vai adotar?</p>
+<main>
 
-            <div class="cards-container">
-                <div class="card card-eco">
-                    <div class="card-icon">🌱</div>
-                    <h4>Manejo Biológico e Cultural</h4>
-                    <p>Liberação do parasitoide <em>Trichogramma pretiosum</em> (vespinha) e aplicação de defensivos biológicos à base de <em>Bacillus thuringiensis</em> (Bt).</p>
-                    <button type="button" class="btn-action btn-eco-action" onclick="simularManejo('biologico')">Aplicar Controle Biológico</button>
-                </div>
+<section class="card">
+    <h2>Sobre o Projeto</h2>
 
-                <div class="card card-chemical">
-                    <div class="card-icon">⚠️</div>
-                    <h4>Químico Calendarizado</h4>
-                    <p>Pulverização massiva com inseticidas químicos sintéticos de largo espectro preventivamente a cada 7 dias, independente da amostragem.</p>
-                    <button type="button" class="btn-action btn-chem-action" onclick="simularManejo('quimico')">Aplicar Químico Massivo</button>
-                </div>
-            </div>
+    <p>
+        O controle ecológico de pragas ajuda a proteger as plantações
+        sem prejudicar a natureza. Com técnicas sustentáveis, é possível
+        produzir mais e preservar o meio ambiente.
+    </p>
+</section>
 
-            <div id="result-panel" class="result-box hidden">
-                <h4 id="result-title"></h4>
-                <p id="result-desc"></p>
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <span class="stat-label">Produtividade</span>
-                        <span id="stat-prod" class="stat-value">-</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-label">Biodiversidade</span>
-                        <span id="stat-bio" class="stat-value">-</span>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-label">Custo Econômico</span>
-                        <span id="stat-custo" class="stat-value">-</span>
-                    </div>
-                </div>
-            </div>
-        </section>
+<section class="card">
+    <h2>Soluções Sustentáveis</h2>
 
-    </main>
+    <ul>
+        <li>🐞 Controle Biológico</li>
+        <li>🌱 Rotação de Culturas</li>
+        <li>🌼 Plantas Repelentes</li>
+        <li>🪤 Armadilhas Naturais</li>
+        <li>♻️ Manejo Integrado de Pragas</li>
+    </ul>
+</section>
 
-    <footer class="main-footer">
-        <p>&copy; 2026 - Projeto Desenvolvido para o Concurso Agrinho. Foco em Inovação e Sustentabilidade no Campo.</p>
-    </footer>
+<section class="card">
+    <h2>Benefícios</h2>
 
-    <script src="script.js"></script>
+    <p id="mensagem">
+        Produzir alimentos preservando o solo, a água e a biodiversidade.
+    </p>
+</section>
+
+</main>
+
+<footer>
+    <p>#agrinho2026</p>
+</footer>
+
+<script src="script.js"></script>
+
 </body>
 </html>
