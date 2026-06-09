@@ -1,76 +1,218 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* ==========================================================================
+   1. RESET E CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
-    font-family:Arial, Helvetica, sans-serif;
-    background:#f4fff4;
-    color:#222;
-    line-height:1.7;
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background-color: #f4fff4;
+    color: #222222;
+    line-height: 1.7;
+    transition: background-color 0.3s ease;
 }
 
-header{
-    background:#2e7d32;
-    color:white;
-    text-align:center;
-    padding:50px 20px;
+/* Esconde o checkbox real do Modo Escuro da tela */
+.dark-mode-input {
+    display: none;
 }
 
-header h1{
-    font-size:3rem;
-    margin-bottom:10px;
+/* Wrapper que envolve o site para facilitar a transição de cores */
+.site-wrapper {
+    transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 100vh;
 }
 
-main{
-    width:90%;
-    max-width:1100px;
-    margin:auto;
-    padding:30px 0;
+/* ==========================================================================
+   2. CABEÇALHO E BOTÃO DE MODO ESCURO
+   ========================================================================== */
+header {
+    background: linear-gradient(135deg, #1b5e20, #2e7d32);
+    color: #ffffff;
+    padding: 50px 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-.card{
-    background:white;
-    padding:25px;
-    margin-bottom:20px;
-    border-radius:15px;
-    box-shadow:0 3px 10px rgba(0,0,0,0.1);
-    transition:0.3s;
+.header-top {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto 12px auto;
+    position: relative;
 }
 
-.card:hover{
-    transform:translateY(-5px);
+header h1 {
+    font-size: 3.2rem;
+    font-weight: 700;
 }
 
-h2{
-    color:#2e7d32;
-    margin-bottom:15px;
+header p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
 }
 
-ul{
-    margin-left:25px;
+/* Estilização do Botão Alternador (Switch) */
+.dark-mode-label {
+    background: #ffffff;
+    color: #222222;
+    padding: 8px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: bold;
+    font-size: 0.9rem;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    user-select: none;
+    transition: background-color 0.3s, color 0.3s;
 }
 
-footer{
-    background:#2e7d32;
-    color:white;
-    text-align:center;
-    padding:25px;
+/* Controla quais ícones aparecem por padrão */
+.dark-mode-label .lua { display: inline; }
+.dark-mode-label .sol { display: none; }
+
+/* ==========================================================================
+   3. CONTEÚDO PRINCIPAL (MAIN) E CARDS
+   ========================================================================== */
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 0;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 24px;
 }
 
-@media(max-width:768px){
+.card {
+    background: #ffffff;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid #4caf50;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
 
-    header h1{
-        font-size:2rem;
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(46, 125, 50, 0.15);
+}
+
+.card h2 {
+    color: #2e7d32;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    transition: color 0.3s;
+}
+
+.card p {
+    color: #444444;
+    margin-bottom: 12px;
+    transition: color 0.3s;
+}
+
+.card p:last-child {
+    margin-bottom: 0;
+}
+
+.card ul {
+    list-style-position: inside;
+    margin-left: 10px;
+}
+
+.card ul li {
+    margin-bottom: 8px;
+    color: #444444;
+    transition: color 0.3s;
+}
+
+/* ==========================================================================
+   4. RODAPÉ (FOOTER)
+   ========================================================================== */
+footer {
+    background: #1b5e20;
+    color: #ffffff;
+    text-align: center;
+    padding: 35px 20px;
+    margin-top: 40px;
+    transition: background-color 0.3s;
+}
+
+footer p:first-child {
+    font-weight: bold;
+    color: #a5d6a7;
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+/* ==========================================================================
+   5. LÓGICA DO MODO ESCURO (APENAS COM CSS)
+   ========================================================================== */
+/* Quando o input secreto for marcado (:checked), altera os estilos de todo o site */
+
+.dark-mode-input:checked + .site-wrapper {
+    background-color: #121212; /* Fundo preto para o site */
+    color: #e0e0e0;
+}
+
+.dark-mode-input:checked + .site-wrapper .card {
+    background-color: #1e1e1e; /* Cards cinza escuro */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.dark-mode-input:checked + .site-wrapper .card h2 {
+    color: #81c784; /* Títulos dos cards em verde claro luminoso */
+}
+
+.dark-mode-input:checked + .site-wrapper .card p,
+.dark-mode-input:checked + .site-wrapper .card li {
+    color: #cccccc; /* Texto interno cinza claro para melhor leitura */
+}
+
+.dark-mode-input:checked + .site-wrapper header {
+    background: linear-gradient(135deg, #0b260d, #143816); /* Header escurecido */
+}
+
+.dark-mode-input:checked + .site-wrapper footer {
+    background: #0b260d; /* Rodapé escurecido */
+}
+
+/* Inverte a exibição do ícone no botão (mostra o sol e esconde a lua) */
+.dark-mode-input:checked + .site-wrapper .dark-mode-label {
+    background: #333333;
+    color: #ffffff;
+}
+.dark-mode-input:checked + .site-wrapper .dark-mode-label .lua { display: none; }
+.dark-mode-input:checked + .site-wrapper .dark-mode-label .sol { display: inline; }
+
+/* ==========================================================================
+   6. RESPONSIVIDADE E DISTRIBUIÇÃO
+   ========================================================================== */
+@media (min-width: 769px) {
+    main {
+        grid-template-columns: repeat(2, 1fr);
     }
-
-    main{
-        width:95%;
+    .card:first-child,
+    .card:last-child {
+        grid-column: span 2;
     }
+}
 
-    .card{
-        padding:18px;
+@media (max-width: 768px) {
+    .header-top {
+        flex-direction: column;
+        gap: 10px;
     }
-
+    header h1 { font-size: 2.2rem; }
+    main { width: 92%; padding: 20px 0; gap: 16px; }
+    .card { padding: 20px; }
 }
