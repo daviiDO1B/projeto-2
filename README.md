@@ -14,11 +14,11 @@ Apresentar soluções ecológicas para o controle de pragas agrícolas, incentiv
 
 O uso excessivo de defensivos químicos pode causar impactos ambientais e prejudicar a biodiversidade. Este projeto busca demonstrar alternativas sustentáveis que auxiliam no controle de pragas de forma eficiente e responsável.
 
-## Tecnologias Utilizadas
+## LINGUAGENS UTILIZADAS
 
 * HTML5
 * CSS3
-* JavaScript
+
 
 ## Funcionalidades
 
@@ -57,6 +57,8 @@ FAO - Agricultura Sustentável.
 Ministério da Agricultura do Brasil.
 
 As imagens utilizadas são próprias ou editadas através do Canva.
+
+O botão de modo escuro eu solicitei ajuda ao gemini 
 
 ## Publicação
 

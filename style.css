@@ -59,7 +59,7 @@ header p {
     text-align: center;
 }
 
-/* Estilização do Botão Alternador (Switch) */
+/* Estilização do Botão Alternador  */
 .dark-mode-label {
     background: #ffffff;
     color: #222222;
@@ -81,7 +81,7 @@ header p {
 .dark-mode-label .sol { display: none; }
 
 /* ==========================================================================
-   3. CONTEÚDO PRINCIPAL (MAIN) E CARDS
+   3. CONTEÚDO PRINCIPAL  E CARDS
    ========================================================================== */
 main {
     width: 90%;
@@ -136,7 +136,7 @@ main {
 }
 
 /* ==========================================================================
-   4. RODAPÉ (FOOTER)
+   4. RODAPÉ 
    ========================================================================== */
 footer {
     background: #1b5e20;
@@ -155,7 +155,7 @@ footer p:first-child {
 }
 
 /* ==========================================================================
-   5. LÓGICA DO MODO ESCURO (APENAS COM CSS)
+   5.  MODO ESCURO 
    ========================================================================== */
 /* Quando o input secreto for marcado (:checked), altera os estilos de todo o site */
 
