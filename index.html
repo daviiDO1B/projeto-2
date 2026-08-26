@@ -15,6 +15,8 @@
     <h1>Flashcards de Física</h1>
 
     <a href="#" class="cabecalho-link">Espelhos e Lentes</a>
+
+    <button id="botao-tema">🌙 Modo escuro</button>
   </header>
 
   <main>
@@ -37,8 +39,7 @@
             <span class="numero">01</span>
 
             <img src="imagens/espelho-plano.jpg"
-                 alt="Exemplo de espelho plano"
-                 style="width: 120px; height: 90px; object-fit: cover; border-radius: 10px;">
+                 alt="Exemplo de espelho plano">
 
             <h2>O que acontece com a imagem em um espelho plano?</h2>
 
@@ -55,8 +56,7 @@
             </p>
 
             <img src="imagens/espelho-plano.jpg"
-                 alt="Exemplo de espelho plano"
-                 style="width: 120px; height: 90px; object-fit: cover; border-radius: 10px; margin-top: 15px;">
+                 alt="Exemplo de espelho plano">
           </div>
 
         </div>
@@ -70,8 +70,7 @@
             <span class="numero">02</span>
 
             <img src="imagens/espelho-concavo.jpg"
-                 alt="Exemplo de espelho côncavo"
-                 style="width: 120px; height: 90px; object-fit: cover; border-radius: 10px;">
+                 alt="Exemplo de espelho côncavo">
 
             <h2>O que é um espelho côncavo?</h2>
 
@@ -88,8 +87,7 @@
             </p>
 
             <img src="imagens/espelho-concavo.jpg"
-                 alt="Exemplo de espelho côncavo"
-                 style="width: 120px; height: 90px; object-fit: cover; border-radius: 10px; margin-top: 15px;">
+                 alt="Exemplo de espelho côncavo">
           </div>
 
         </div>
@@ -103,8 +101,7 @@
             <span class="numero">03</span>
 
             <img src="imagens/espelho-convexo.jpg"
-                 alt="Exemplo de espelho convexo"
-                 style="width: 120px; height: 90px; object-fit: cover; border-radius: 10px;">
+                 alt="Exemplo de espelho convexo">
 
             <h2>Qual é a diferença entre espelho côncavo e convexo?</h2>
 
@@ -122,8 +119,7 @@
             </p>
 
             <img src="imagens/espelho-convexo.jpg"
-                 alt="Exemplo de espelho convexo"
-                 style="width: 120px; height: 90px; object-fit: cover; border-radius: 10px; margin-top: 15px;">
+                 alt="Exemplo de espelho convexo">
           </div>
 
         </div>
@@ -137,8 +133,7 @@
             <span class="numero">04</span>
 
             <img src="imagens/lente-convergente.jpg"
-                 alt="Exemplo de lente convergente"
-                 style="width: 120px; height: 90px; object-fit: cover; border-radius: 10px;">
+                 alt="Exemplo de lente convergente">
 
             <h2>O que é uma lente convergente?</h2>
 
@@ -155,8 +150,7 @@
             </p>
 
             <img src="imagens/lente-convergente.jpg"
-                 alt="Exemplo de lente convergente"
-                 style="width: 120px; height: 90px; object-fit: cover; border-radius: 10px; margin-top: 15px;">
+                 alt="Exemplo de lente convergente">
           </div>
 
         </div>
@@ -170,8 +164,7 @@
             <span class="numero">05</span>
 
             <img src="imagens/lente-divergente.jpg"
-                 alt="Exemplo de lente divergente"
-                 style="width: 120px; height: 90px; object-fit: cover; border-radius: 10px;">
+                 alt="Exemplo de lente divergente">
 
             <h2>Como funciona uma lente divergente?</h2>
 
@@ -188,8 +181,7 @@
             </p>
 
             <img src="imagens/lente-divergente.jpg"
-                 alt="Exemplo de lente divergente"
-                 style="width: 120px; height: 90px; object-fit: cover; border-radius: 10px; margin-top: 15px;">
+                 alt="Exemplo de lente divergente">
           </div>
 
         </div>
@@ -203,8 +195,7 @@
             <span class="numero">06</span>
 
             <img src="imagens/distancia-focal.jpg"
-                 alt="Representação da distância focal"
-                 style="width: 120px; height: 90px; object-fit: cover; border-radius: 10px;">
+                 alt="Representação da distância focal">
 
             <h2>O que é a distância focal?</h2>
 
@@ -222,8 +213,7 @@
             </p>
 
             <img src="imagens/distancia-focal.jpg"
-                 alt="Representação da distância focal"
-                 style="width: 120px; height: 90px; object-fit: cover; border-radius: 10px; margin-top: 15px;">
+                 alt="Representação da distância focal">
           </div>
 
         </div>
@@ -236,6 +226,20 @@
   <footer>
     <p>Trabalho de Física - Espelhos e Lentes</p>
   </footer>
+
+  <script>
+    const botaoTema = document.getElementById("botao-tema");
+
+    botaoTema.addEventListener("click", function () {
+      document.body.classList.toggle("modo-escuro");
+
+      if (document.body.classList.contains("modo-escuro")) {
+        botaoTema.textContent = "☀️ Modo claro";
+      } else {
+        botaoTema.textContent = "🌙 Modo escuro";
+      }
+    });
+  </script>
 
 </body>
 </html>

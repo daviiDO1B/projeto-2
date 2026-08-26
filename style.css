@@ -11,6 +11,7 @@ body {
   color: #333;
   display: flex;
   flex-direction: column;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .cabecalho {
@@ -20,6 +21,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 15px;
 }
 
 .cabecalho h1 {
@@ -33,7 +35,21 @@ body {
   font-size: 16px;
 }
 
+#botao-tema {
+  background-color: white;
+  color: #28004d;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
 
+#botao-tema:hover {
+  background-color: #ddd;
+}
 
 .introducao {
   text-align: center;
@@ -157,6 +173,54 @@ body {
 .cartao-verso p {
   font-size: 16px;
   line-height: 1.6;
+}
+
+/* IMAGENS DOS FLASHCARDS */
+
+.cartao-frente img,
+.cartao-verso img {
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+/* MODO ESCURO */
+
+body.modo-escuro {
+  background-color: #18151c;
+  color: #eee;
+}
+
+body.modo-escuro .introducao h2 {
+  color: #c58aff;
+}
+
+body.modo-escuro .introducao p {
+  color: #ccc;
+}
+
+body.modo-escuro .cartao-frente {
+  background-color: #29242f;
+  color: white;
+}
+
+body.modo-escuro .cartao-frente p {
+  color: #ccc;
+}
+
+body.modo-escuro .cartao-verso {
+  background-color: #3a1261;
+}
+
+body.modo-escuro #botao-tema {
+  background-color: #3a1261;
+  color: white;
+}
+
+body.modo-escuro #botao-tema:hover {
+  background-color: #522080;
 }
 
 footer {
