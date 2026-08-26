@@ -1,87 +1,48 @@
-body {
-  font-family: Arial, sans-serif;
-  background-color: #78797a;
-  text-align: center;
-  margin: 0;
-  padding: 20px;
+.cabecalho { 
+  background-color: #7e3e1c; 
+  padding: 15px 25px; 
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+} 
+.cabecalho-link { 
+  color: #fff; 
+  text-decoration: none; 
+}  
+h1 { 
+  color: #fff; 
+  font-size: 24px; 
+} 
+body { 
+  display: flex; 
+  flex-direction: column; 
+  min-height: 100vh; 
+  background-color: #f5f2f2; 
+} 
+footer { 
+  background-color: #7e3e1c; 
+  padding: 15px 25px; 
+  color: #fff; 
+} 
+.cartao-interno { 
+  position: relative; 
+  transition: transform 0.8s; 
+  transform-style: preserve-3d; 
+} 
+.cartao-frente, 
+.cartao-verso { 
+  position: absolute; 
+  border-radius: 12px; 
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); 
+  backface-visibility: hidden; 
+} 
+.cartao-verso { 
+  transform: rotateY(180deg); 
+}   
+.cartao:hover .cartao-interno { 
+  transform: rotateY(180deg); 
 }
-
-h1 {
-  color: #2c3e50;
-}
-
-.instrucao {
-  color: #2b2c2c;
-  font-size: 14px;
-}
-
-.card-container {
-  perspective: 1000px;
-  width: 300px;
-  height: 380px;
-  margin: 20px auto;
-}
-
-.card {
-  width: 100%;
-  height: 100%;
-  position: relative;
-  transform-style: preserve-3d;
-  transition: transform 0.5s;
-  cursor: pointer;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-}
-
-
-.card.virado {
-  transform: rotateY(180deg);
-}
-
-.frente, .verso {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  backface-visibility: hidden;
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 15px;
-  box-sizing: border-box;
-}
-
-.frente {
-  background-color: #ffffff;
-  color: #333;
-}
-
-.frente img {
-  width: 150px;
-  height: 120px;
-  object-fit: cover;
-  border-radius: 5px;
-  margin-bottom: 10px;
-}
-
-.verso {
-  background-color: #3498db;
-  color: white;
-  transform: rotateY(180deg);
-}
-
-.botoes button {
-  background-color: #2980b9;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  margin: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
-}
-
-.botoes button:hover {
-  background-color: #791717;
-}
+section { 
+  display: flex; 
+  gap: 16px; 
+} 
