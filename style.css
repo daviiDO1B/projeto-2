@@ -1,6 +1,6 @@
 body {
   font-family: Arial, sans-serif;
-  background-color: #eef2f5;
+  background-color: #78797a;
   text-align: center;
   margin: 0;
   padding: 20px;
@@ -11,7 +11,7 @@ h1 {
 }
 
 .instrucao {
-  color: #7f8c8d;
+  color: #2b2c2c;
   font-size: 14px;
 }
 
@@ -33,7 +33,7 @@ h1 {
   box-shadow: 0 4px 8px rgba(0,0,0,0.2);
 }
 
-/* Efeito de virar a carta */
+
 .card.virado {
   transform: rotateY(180deg);
 }
@@ -83,5 +83,5 @@ h1 {
 }
 
 .botoes button:hover {
-  background-color: #1c5980;
+  background-color: #791717;
 }
