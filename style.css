@@ -7,20 +7,28 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   min-height: 100vh;
+
   background-color: #f5f2f2;
   color: #333;
+
   display: flex;
   flex-direction: column;
+
   transition: background-color 0.3s, color 0.3s;
 }
 
+
+/* CABEÇALHO */
+
 .cabecalho {
   background-color: #28004d;
+
   padding: 18px 30px;
 
   display: flex;
   justify-content: space-between;
   align-items: center;
+
   gap: 15px;
 }
 
@@ -35,15 +43,24 @@ body {
   font-size: 16px;
 }
 
+
+/* BOTÃO */
+
 #botao-tema {
   background-color: white;
   color: #28004d;
+
   border: none;
+
   padding: 10px 15px;
+
   border-radius: 8px;
+
   font-size: 14px;
   font-weight: bold;
+
   cursor: pointer;
+
   transition: 0.3s;
 }
 
@@ -51,28 +68,42 @@ body {
   background-color: #ddd;
 }
 
+
+/* INTRODUÇÃO */
+
 .introducao {
   text-align: center;
+
   padding: 35px 20px 20px;
 }
 
 .introducao h2 {
   color: #28004d;
+
   font-size: 28px;
+
   margin-bottom: 12px;
 }
 
 .introducao p {
   max-width: 700px;
+
   margin: auto;
+
   line-height: 1.6;
+
   color: #555;
 }
 
+
+/* CARTÕES */
+
 .cartoes {
   display: flex;
+
   justify-content: center;
   align-items: center;
+
   gap: 25px;
 
   flex-wrap: wrap;
@@ -102,6 +133,9 @@ body {
   transform: rotateY(180deg);
 }
 
+
+/* FRENTE E VERSO */
+
 .cartao-frente,
 .cartao-verso {
   position: absolute;
@@ -121,10 +155,14 @@ body {
 
   text-align: center;
 
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  box-shadow:
+    0 6px 15px rgba(0, 0, 0, 0.15);
 
   backface-visibility: hidden;
 }
+
+
+/* FRENTE */
 
 .cartao-frente {
   background-color: #ffffff;
@@ -133,33 +171,61 @@ body {
 
 .cartao-frente h2 {
   font-size: 21px;
+
   margin: 20px 0;
+
   line-height: 1.4;
 }
 
 .cartao-frente p {
   color: #777;
+
   font-size: 14px;
 }
 
+
+/* NÚMERO */
+
 .numero {
   background-color: #28004d;
+
   color: white;
 
   width: 45px;
   height: 45px;
 
   display: flex;
+
   align-items: center;
   justify-content: center;
 
   border-radius: 50%;
 
   font-weight: bold;
+
+  flex-shrink: 0;
 }
+
+
+/* IMAGENS */
+
+.cartao-frente img {
+  width: 150px;
+  height: 100px;
+
+  object-fit: cover;
+
+  border-radius: 10px;
+
+  margin-top: 10px;
+}
+
+
+/* VERSO */
 
 .cartao-verso {
   background-color: #28004d;
+
   color: white;
 
   transform: rotateY(180deg);
@@ -167,22 +233,18 @@ body {
 
 .cartao-verso h2 {
   margin-bottom: 20px;
+
   font-size: 24px;
 }
 
 .cartao-verso p {
   font-size: 16px;
+
   line-height: 1.6;
 }
 
-.cartao-frente img,
-.cartao-verso img {
-  width: 120px;
-  height: 90px;
-  object-fit: cover;
-  border-radius: 10px;
-  margin-top: 10px;
-}
+
+/* MODO ESCURO */
 
 body.modo-escuro {
   background-color: #18151c;
@@ -219,6 +281,9 @@ body.modo-escuro #botao-tema:hover {
   background-color: #522080;
 }
 
+
+/* RODAPÉ */
+
 footer {
   margin-top: auto;
 
@@ -231,11 +296,16 @@ footer {
   text-align: center;
 }
 
+
+/* CELULAR */
+
 @media (max-width: 650px) {
 
   .cabecalho {
     flex-direction: column;
+
     gap: 10px;
+
     text-align: center;
   }
 
@@ -249,4 +319,3 @@ footer {
   }
 
 }
- 
