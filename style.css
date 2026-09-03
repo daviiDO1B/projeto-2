@@ -7,7 +7,6 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   min-height: 100vh;
-
   background-color: #f5f2f2;
   color: #333;
 
@@ -18,7 +17,9 @@ body {
 }
 
 
+/* ========================= */
 /* CABEÇALHO */
+/* ========================= */
 
 .cabecalho {
   background-color: #28004d;
@@ -44,7 +45,9 @@ body {
 }
 
 
-/* BOTÃO */
+/* ========================= */
+/* BOTÃO DE TEMA */
+/* ========================= */
 
 #botao-tema {
   background-color: white;
@@ -69,7 +72,9 @@ body {
 }
 
 
+/* ========================= */
 /* INTRODUÇÃO */
+/* ========================= */
 
 .introducao {
   text-align: center;
@@ -96,7 +101,9 @@ body {
 }
 
 
+/* ========================= */
 /* CARTÕES */
+/* ========================= */
 
 .cartoes {
   display: flex;
@@ -111,12 +118,14 @@ body {
   padding: 30px 25px 50px;
 }
 
+
 .cartao {
   width: 300px;
   height: 360px;
 
   perspective: 1000px;
 }
+
 
 .cartao-interno {
   position: relative;
@@ -129,12 +138,15 @@ body {
   transform-style: preserve-3d;
 }
 
+
 .cartao:hover .cartao-interno {
   transform: rotateY(180deg);
 }
 
 
+/* ========================= */
 /* FRENTE E VERSO */
+/* ========================= */
 
 .cartao-frente,
 .cartao-verso {
@@ -162,10 +174,13 @@ body {
 }
 
 
+/* ========================= */
 /* FRENTE */
+/* ========================= */
 
 .cartao-frente {
   background-color: #ffffff;
+
   color: #333;
 }
 
@@ -184,7 +199,9 @@ body {
 }
 
 
+/* ========================= */
 /* NÚMERO */
+/* ========================= */
 
 .numero {
   background-color: #28004d;
@@ -202,16 +219,17 @@ body {
   border-radius: 50%;
 
   font-weight: bold;
-
-  flex-shrink: 0;
 }
 
 
-/* IMAGENS */
+/* ========================= */
+/* IMAGENS DOS CARDS */
+/* ========================= */
 
-.cartao-frente img {
-  width: 150px;
-  height: 100px;
+.cartao-frente img,
+.cartao-verso img {
+  width: 120px;
+  height: 90px;
 
   object-fit: cover;
 
@@ -221,7 +239,9 @@ body {
 }
 
 
+/* ========================= */
 /* VERSO */
+/* ========================= */
 
 .cartao-verso {
   background-color: #28004d;
@@ -244,45 +264,59 @@ body {
 }
 
 
+/* ========================= */
 /* MODO ESCURO */
+/* ========================= */
 
 body.modo-escuro {
   background-color: #18151c;
+
   color: #eee;
 }
+
 
 body.modo-escuro .introducao h2 {
   color: #c58aff;
 }
 
+
 body.modo-escuro .introducao p {
   color: #ccc;
 }
 
+
 body.modo-escuro .cartao-frente {
   background-color: #29242f;
+
   color: white;
 }
+
 
 body.modo-escuro .cartao-frente p {
   color: #ccc;
 }
 
+
 body.modo-escuro .cartao-verso {
   background-color: #3a1261;
 }
 
+
 body.modo-escuro #botao-tema {
   background-color: #3a1261;
+
   color: white;
 }
+
 
 body.modo-escuro #botao-tema:hover {
   background-color: #522080;
 }
 
 
+/* ========================= */
 /* RODAPÉ */
+/* ========================= */
 
 footer {
   margin-top: auto;
@@ -297,7 +331,9 @@ footer {
 }
 
 
+/* ========================= */
 /* CELULAR */
+/* ========================= */
 
 @media (max-width: 650px) {
 
@@ -309,12 +345,15 @@ footer {
     text-align: center;
   }
 
+
   .cartoes {
     padding: 20px 15px 40px;
   }
 
+
   .cartao {
     width: 290px;
+
     height: 350px;
   }
 
